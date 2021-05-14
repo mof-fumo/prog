@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>じゃんけん</h1>
+    </header>
+
+    <main>
+        <div>グー、チョキ、パーのいずれかを選んでね</div>
+        <ul>
+            <li id="gu_btn">グー</li>
+            <li id="cho_btn">チョキ</li>
+            <li id="par_btn">パー</li>
+        </ul>
+
+        <div>コンピュータの出した手:<span id="pc_hands"></span></div>
+        <div>勝敗判定：<span id="judgement">-</span></div>
+    <div class="count_wrapper">
+        <h3>これまでの戦績</h3>
+        <span class="comments">※ページを再読み込みすると戦績がリセットされます</span>
+        <div>対戦数：<span id="match_count">0</span></div>
+        <div>勝ち数：<span id="win_count">0</span></div>
+        <div>負け数：<span id="lose_count">0</span></div>
+        <div>引き分け数：<span id="even_count">0</span></div>
+    </div>
+    </main>
+
+    <footer></footer>
+    <script>
+        var win = 0;
+        var lose = 0;
+        var even = 0;
+        var match = 0;
+
+        function match_count_cal(){
+            match = win + lose + even;
+        }
+        
+        $("#gu_btn").on("click",function(){
+            var num  = Math.floor(Math.random()*3+1)
+                if(num===1){
+                    $("#pc_hands").html('グー');
+                    $("#judgement").html('あいこです');
+                    even += 1; 
+                    $("#even_count").html(even);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===2){
+                    $("#pc_hands").html('チョキ');
+                    $("#judgement").html('あなたの勝ちです');
+                    win += 1; 
+                    $("#win_count").html(win);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===3){
+                    $("#pc_hands").html('パー');
+                    $("#judgement").html('あなたの負けです');
+                    lose += 1; 
+                    $("#lose_count").html(lose);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }
+        });
+
+        $("#cho_btn").on("click",function(){
+            var num  = Math.floor(Math.random()*3+1)
+                if(num===1){
+                    $("#pc_hands").html('グー');
+                    $("#judgement").html('あなたの負けです');
+                    lose += 1; 
+                    $("#lose_count").html(lose);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===2){
+                    $("#pc_hands").html('チョキ');
+                    $("#judgement").html('あいこです');
+                    even += 1; 
+                    $("#even_count").html(even);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===3){
+                    $("#pc_hands").html('パー');
+                    $("#judgement").html('あなたの勝ちです');
+                    win += 1; 
+                    $("#win_count").html(win);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }
+        });
+
+        $("#par_btn").on("click",function(){
+            var num  = Math.floor(Math.random()*3+1)
+                if(num===1){
+                    $("#pc_hands").html('グー');
+                    $("#judgement").html('あなたの勝ちです');
+                    win += 1; 
+                    $("#win_count").html(win);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===2){
+                    $("#pc_hands").html('チョキ');
+                    $("#judgement").html('あなたの負けです');
+                    lose += 1; 
+                    $("#lose_count").html(lose);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }else if(num===3){
+                    $("#pc_hands").html('パー');
+                    $("#judgement").html('あいこです');
+                    even += 1; 
+                    $("#even_count").html(even);
+                    match_count_cal();
+                    $("#match_count").html(match);
+                }
+        });
+
+    </script>
+</body>
+
+</html>
