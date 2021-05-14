@@ -1,0 +1,320 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    color: #222222;
+    font-size: 1.6rem;
+    font-family: 'Noto Sans JP','ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    margin: 0px auto;
+    padding: 0px;
+    /* text-align: center; */
+    /* width: 1200px; */
+    max-width: 100%;
+    line-height: 2;
+}
+
+[class*=wrapper]{
+    width: 1200px;
+    margin:0 auto;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+h2{
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+h3{
+    font-size: 1.8rem;
+    margin-bottom: 60px;
+}
+
+/* 大きめの改行用」の.bs（ビッグスペース) */
+.bs{
+    margin-bottom: 40px;
+}
+
+/* header */
+header{
+    background-color: #fff;
+}
+
+
+.site-title{
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+#header_logo{
+    max-width: 100%;
+    height: auto;
+}
+
+.header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 121px;
+    align-items: center;
+    /* border: 0.5px solid;
+    position:relative */
+
+}
+
+.nav_list{
+    display: flex;
+    /* padding: 50px 0; */
+    /* position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%); */
+}
+
+.nav_item{
+    margin: 0 50px 0 0;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+.nav_item>a{
+    text-decoration: none;
+    color: #222222;
+
+}
+/* main-visual */
+
+.main_visual_wrapper{
+    /* position: relative; */
+    height: 400px;
+    background: url(..//img/mainbg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}   
+
+.main_visual_text{
+    padding-top: 150px;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 2;
+    text-align: center;
+    /* top: 50%;
+    left: 50%; */
+    color: #fff;
+    /* position:absolute;
+    transform: translate3d(-50%,-50%,0);  */
+}
+
+.subtext{
+    font-weight: normal;
+}
+
+
+/* about */
+.about_wrapper{
+    padding:60px 0;
+}
+
+#about_title{
+    color: #ffd61a;
+}
+
+#about_cheese_academy{
+    margin-bottom: 60px;
+    font-size: 1.8rem;
+}
+
+.about_list{
+    display: flex;
+}
+
+.about_img{
+    width: 25%;
+}
+/* course */
+.course_list{
+    display: flex;
+}
+
+.course_text{   
+    width: 50%;
+    /* padding デベロッパーツールでエラーが出る */
+    /* padding: 50px auto; */
+    background-color: #fafafa;
+    margin: auto;
+}
+
+.course_img{
+    width: 50%;
+}
+
+
+
+/* NEWS */
+.btn{
+    display: block;
+    width: 300px;
+    padding: 21px 0;
+    margin: auto;
+    background-color: #ffd61a;
+    font-size: 1.8rem;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+}
+
+.btn:hover{
+    transform: scale(.7, .7);
+}
+
+.news_wrapper{
+    padding: 60px 0;
+}
+
+
+.news_heading{
+    text-align: left;
+}
+
+.news_list{
+    margin: 0 0 60px;
+    display: flex;
+}
+
+.news_img{
+    margin:0 0px 30px 0px;
+    width: 100%;
+}
+.news_item{
+    width: 33.333%;
+    margin:0 30px 30px 0px;
+    display: block;
+}
+
+.news_item:hover{
+    box-shadow: 0 5px 10px black;
+    transform: translate(0, -5px);
+}
+
+
+.news_title{
+    font-size: 1.8rem;
+    margin: 0 0 60px;
+}
+
+.news_date{
+    margin-bottom: 24px;
+}
+/* Access */
+.access_wrapper{
+    padding: 60px 0;
+    background-color: #fafafa;
+}
+
+.gmap iframe{
+    width: 100%;
+    height: 300px;
+}
+
+.access_inner{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    text-align: left;
+    align-items: center;
+}
+
+.access_item{
+    width: 60%;
+    margin:8px 0;
+    font-size: 1.4rem;
+    border-bottom: 1px solid;
+}
+
+.access_title{
+    width: 40%;
+    font-size: 1.4rem;
+}
+
+/* CONTACT */
+.form_wrapper{
+    width: 568px;
+    margin: auto;
+    padding: 60px 0 140px;
+}
+
+.form_item{
+    width: 328px;
+    margin:8px 0;
+    font-size: 1.4rem;
+}
+
+.form_title{
+    width: 160px;
+    margin:0 64px 0 16px;
+    border-bottom: 1px solid #222222;
+}
+
+.form_inner{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.form_disclame{
+    margin: 30px 0 70px;
+}
+
+.form_parts{
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    border: 1px solid #c9c9c9;
+    margin: 8px;
+    width: 80%;
+}
+
+
+/* footer */ 
+footer{
+    background-color: #707070;
+    padding: 30px 0;
+    color: #fff;
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* .icon_up{
+    display: block;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 2.4rem;
+}
+
+.btn_pagetop{
+    display: block;
+    width: 44px;
+    height: 44px;
+    top: -78px;
+    right: 0px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #707070;
+}
+
+.footer .footer_btn{
+    position: relative;
+} */
