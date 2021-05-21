@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>無料画像素材</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/sample_kadai.css">
+</head>
+<body id="index">
+    <header>
+        <h1>商用利用可能！会員登録不要！いい感じの背景画像素材</h1>
+        <!-- ページ読み込み時点のお気に入り数を表示（動的に数字を表示できるように改良したい） -->
+        <div id="favs_number"></div>
+        <a href="./favs.html">お気に入り一覧を見る</a>
+    </header>
+
+    <ul class="grid_container" id="list">
+    <!-- htmlを埋め込む -->
+    </ul>
+
+    <div id="grayDisplay"></div>
+
+    <script>
+    // 画像データを連想配列として登録
+    const items =[
+        {title:"砂漠",filename:"img0.png"},
+        {title:"ひまわり畑",filename:"img1.png"},
+        {title:"大都会",filename:"img2.png"},
+        {title:"オレンジ",filename:"img3.png"},
+        {title:"サボテン",filename:"img4.png"},
+        {title:"光の差す方へ",filename:"img5.png"},
+        {title:"クレヨン",filename:"img6.png"},
+        {title:"フラワー",filename:"img7.png"},
+        {title:"落ち葉",filename:"img8.png"},
+    ];
+
+    //ローカルストレージのKeyを文字列を連結して取得
+        let str =""
+        for(let i=0; i<localStorage.length; i++){
+        str += localStorage.key(i) + ",";
+    }
+    console.log(str);
+    // 連想配列からhtmlのli要素を生成
+    // ローカルストレージの値を見て、表示を出し分けたい
+    // 拡大表示のモーダルを儲けたい
+   
+    for(let i=0; i<items.length; i++){
+        if(str.includes(i)){
+            const html =`
+            <li class="grid_item" id="img${i}">
+                <p class="img_title">title：${items[i].title}</p>
+                    <img src="img/${items[i].filename}" alt="">
+                <p id="fav${i}_append">お気に入りを削除</p>
+            </li>`
+            $("#list").append(html);
+        }else{
+            const html =`
+            <li class="grid_item" id="img${i}">
+                <p class="img_title">title：${items[i].title}</p>
+                    <img src="img/${items[i].filename}" alt="">
+                <p id="fav${i}">お気に入りに追加</p>
+            </li>`
+            $("#list").append(html);
+        }
+    }
+
+    // ローカルストレージのデータ総数を取得/表示
+    function number_get(){
+        let num = localStorage.length;
+        let fnum = `ただいまのお気に入り登録件数は<strong class="font-weight-bold">${num}</strong>件です`
+        $("#favs_number").html(fnum);
+    }
+
+    number_get();
+
+    //1.「お気に入りに追加」→ローカルストレージに登録
+    $("ul").on("click","#fav0",function(){
+        const key = "img0";
+        const value = $("#img0").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav0').text('お気に入りを削除');
+        $('#fav0').attr('id','fav0_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav1",function(){
+        const key = "img1";
+        const value = $("#img1").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav1').text('お気に入りを削除');
+        $('#fav1').attr('id', 'fav1_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav2",function(){
+        const key = "img2";
+        const value = $("#img2").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav2').text('お気に入りを削除');
+        $('#fav2').attr('id', 'fav2_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav3",function(){
+        const key = "img3";
+        const value = $("#img3").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav3').text('お気に入りを削除');
+        $('#fav3').attr('id', 'fav3_append');
+        number_get();
+    });
+    
+    $("ul").on("click","#fav4",function(){
+        const key = "img4";
+        const value = $("#img4").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav4').text('お気に入りを削除');
+        $('#fav4').attr('id', 'fav4_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav5",function(){
+        const key = "img5";
+        const value = $("#img5").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav5').text('お気に入りを削除');
+        $('#fav5').attr('id', 'fav5_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav6",function(){
+        const key = "img6";
+        const value = $("#img6").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav6').text('お気に入りを削除');
+        $('#fav6').attr('id', 'fav6_append');
+        number_get();
+    });
+
+    $("ul").on("click","#fav7",function(){
+        const key = "img7";
+        const value = $("#img7").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav7').text('お気に入りを削除');
+        $('#fav7').attr('id','fav7_append');
+        number_get();
+    });
+    
+    $("ul").on("click","#fav8",function(){
+        const key = "img8";
+        const value = $("#img8").prop('outerHTML');;
+        localStorage.setItem(key,value);
+        $('#fav8').text('お気に入りを削除');
+        $('#fav8').attr('id','fav8_append');
+        number_get();
+    });
+
+    //2.「お気に入りから削除」→ローカルストレージから削除
+    $('ul').on("click", "#fav0_append", function() {
+        localStorage.removeItem("img0");
+        $('#fav0_append').text('お気に入りを追加');
+        $('#fav0_append').attr('id','fav0');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav1_append", function() {
+        localStorage.removeItem("img1");
+        $('#fav1_append').text('お気に入りを追加');
+        $('#fav1_append').attr('id','fav1');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav2_append", function() {
+        localStorage.removeItem("img2");
+        $('#fav2_append').text('お気に入りを追加');
+        $('#fav2_append').attr('id','fav2');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav3_append", function() {
+        localStorage.removeItem("img3");
+        $('#fav3_append').text('お気に入りを追加');
+        $('#fav3_append').attr('id','fav3');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav4_append", function() {
+        localStorage.removeItem("img4");
+        $('#fav4_append').text('お気に入りを追加');
+        $('#fav4_append').attr('id','fav4');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav5_append", function() {
+        localStorage.removeItem("img5");
+        $('#fav5_append').text('お気に入りを追加');
+        $('#fav5_append').attr('id','fav5');
+        number_get();
+    });
+    $('ul').on("click", "#fav6_append", function() {
+        localStorage.removeItem("img6");
+        $('#fav6_append').text('お気に入りを追加');
+        $('#fav6_append').attr('id','fav6');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav7_append", function() {
+        localStorage.removeItem("img7");
+        $('#fav7_append').text('お気に入りを追加');
+        $('#fav7_append').attr('id','fav7');
+        number_get();
+    });
+
+    $('ul').on("click", "#fav8_append", function() {
+        localStorage.removeItem("img8");
+        $('#fav8_append').text('お気に入りを追加');
+        $('#fav8_append').attr('id','fav8');
+        number_get();
+    });
+
+    // 画像拡大モーダル処理
+    // 画像モーダル表示イベント
+  $("img").click(function () {
+    // まず、クリックした画像の HTML(<img>タグ全体)を#frayDisplay内にコピー
+    $("#grayDisplay").html($(this).prop("outerHTML"));
+    //そして、fadeInで表示する。
+    $("#grayDisplay").fadeIn(200);
+    return false;
+  });
+
+  // 画像モーダル非表示イベント
+  // モーダル画像背景 または 拡大画像そのものをクリックで発火
+  $("#grayDisplay").click(function () {
+    // 非表示にする
+    $("#grayDisplay").fadeOut(200);
+    return false;
+  });
+    
+    </script>
+
+
+<footer><small>G's</small></footer>
+</body>
+</html>
+
+<!-- 参考にしたサイト -->
+<!-- グリッドデザイン -->
+<!-- https://goodsan.jp/wp/gridtile/ -->
+<!-- paddingとmarginの使い分け
+https://arrown-blog.com/margin-padding-diffrence/ -->
+<!-- 画像サイズの調整方法
+https://coliss.com/articles/build-websites/operation/css/aligning-logo-images-in-css.html -->

@@ -1,0 +1,155 @@
+@charset "utf-8";
+html{
+	font-size: 62.5%;
+}
+body{
+	color: #333;
+	font-size: 1.6rem;
+	font-family: Arial, "YuGothic Medium","Yu Gothic Medium","游ゴシック Medium","游ゴシック体 Medium",YuGothic,"Yu Gothic","游ゴシック","游ゴシック体","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings : "palt";
+	-moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+
+}
+
+.font-weight-bold{
+  font-size: 4rem;
+}
+
+/* favsのpタグを非表示にする */
+#favs p[id*= "fav"]{
+  display: none;
+}
+
+/* お気に入りに追加・削除*/
+p[id*= "fav"]{
+width: 30%;
+display: block;
+margin-left: auto;
+background-color:rgb(231, 99, 12);
+margin-top: 10px;
+margin-bottom: 10px;
+margin-right: 10px;
+padding:5px;
+text-align: center;
+color: #fff;
+font-size: 0.75rem;
+border-radius: 10px
+}
+
+p[id*= "append"]{
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  background-color: rgb(7, 124, 42);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding:5px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 10px
+  }
+
+#all_delete{
+  width: 10%;
+  display: block;
+  margin:0 auto;
+  background-color: rgb(7, 124, 42);
+  padding:5px;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75rem;
+  border-radius: 10px
+  }
+
+
+/* header */
+h1{
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  background-color:aquamarine;
+  margin-bottom: 10px;
+}
+
+header{
+  text-align: center;
+}
+
+header p{
+  margin-bottom: 10px;
+}
+
+/* main */
+.grid_container {
+  width:80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin:20px auto;
+}
+
+.grid_item img {
+  display: block;
+  /* Make sure max-width is added */
+  max-width: 100%;
+}
+
+li {
+  list-style-type: none;
+  border: 1px solid #666;
+  background-color: #fff;
+  display: table-cell; 
+  cursor: pointer;
+  color: #333;
+}
+
+/* footer */
+footer {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+
+/* コース画像拡大モーダル */
+#grayDisplay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#grayDisplay img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+
+
+.p_plus {
+  position:relative;
+  display:inline-block;
+}
+.rp_plus48 {
+  position:absolute;
+  padding: 5px 4px; /* ルーペアイコンを画像の角から離す量の設定 */  
+  left:0px;
+  top:0px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myMemoPad</title>
+<script src="js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/sample_kadai.css">
+</head>
+<body id="favs">
+    <header>
+        <h1>お気に入り一覧</h1>
+        <div>
+        <a href="./index_kadai.html">トップに戻る</a>
+        <p id="all_delete">お気に入りをすべて削除する</p>
+        </div>
+    </header>
+
+    <ul class="grid_container" id="list">
+    <!-- htmlを埋め込む -->
+    </ul>
+
+<script>
+//ローカルストレージに保存したデータを取得・表示
+for(let i=0; i<localStorage.length; i++){
+    const key   = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    $("#list").append(value);
+}
+
+// ローカルストレージに保存したデータを一括削除する
+$("#all_delete").on("click",function(){
+    $("#list").empty();
+    localStorage.clear();
+})
+
+</script>
+
+<footer><small>G's</small></footer>
+</body>
+</html>
+
+<!-- 参考にしたサイト -->
+<!-- グリッドデザイン -->
+<!-- https://goodsan.jp/wp/gridtile/ -->
+<!-- paddingとmarginの使い分け
+https://arrown-blog.com/margin-padding-diffrence/ -->
+<!-- 画像サイズの調整方法
+https://coliss.com/articles/build-websites/operation/css/aligning-logo-images-in-css.html -->
